@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overnight Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="theme">
+        <span class="switch"></span>
+    </div>
+
+    <div class="container">
+
+        <div class="greeting">
+            <h1>Welcome to Tic Tac Toe Game!</h1>
+            <a href="#ibot" class="btnStart">Let's Start!</a>
+            <p id="ibot">1 player's turn</p>
+        </div>
+
+        <!-- shit! rules="none" really helped to make the table look like a tic tac toe board-->
+        <table id="game-table" rules="none">
+            <tr>
+                <td id="_1"></td>
+                <td id="_2"></td>
+                <td id="_3"></td>
+            </tr>
+            <tr>
+                <td id="_4"></td>
+                <td id="_5"></td>
+                <td id="_6"></td>
+            </tr>
+            <tr>
+                <td id="_7"></td>
+                <td id="_8"></td>
+                <td id="_9"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="app.js"></script>
+    <script src="switcher.js"></script>
+</body>
+</html>

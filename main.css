@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.theme {
+    position: relative;
+    top: 35px;
+    left: 93%;
+    width: 4rem;
+    height: 2rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 35%;
+    cursor: pointer;
+}
+
+.switch {
+    position: absolute;
+    /* because height of the theme is 1rem and the height of the switch is .9 we need to give top: 5% to balance the vertical
+    align of the switch relative to theme */
+    /* top: 1%; */
+    left: -3%;
+    width: 2rem;
+    height: 1.9rem;
+    background: black;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.switched {
+    margin-left: 2.1rem;
+}
+
+.container {
+    /* centering the container with margin:auto; and width:75% */
+    width: 75%;
+    margin: auto;
+
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.greeting {
+    margin-bottom: 5rem;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 1rem;
+    width: 100%;
+    height: 50%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.btnStart {
+    /* bad way of animating: it lags a bit */
+    /* position: absolute; */
+    /* top: 14%; */
+    text-decoration: none;
+    color: green;
+    padding: 1rem;
+    margin: 1rem;
+    border: 3px solid green;
+    transition: all .5s;
+    font-weight: 900;
+    /* text-transform: uppercase; */
+    box-shadow: 0 0 16px 16px yellow;
+    animation: jump 4s ease infinite;
+}
+
+.btnStart:hover {
+    background: green;
+    color: white;
+    box-shadow: none;
+    animation-play-state: paused;
+}
+
+/* new tricks and ways */
+/* .btnStart:hover + .shadow {
+    animation-play-state: paused;
+    visibility: hidden;
+} */
+
+#ibot {
+    margin-top: 2rem;
+    visibility: hidden;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.player1sTurn {
+    color: red;
+}
+
+.player2sTurn {
+    color: blue;
+}
+
+.game-over {
+    color: yellow;
+}
+
+table {
+    width: 30rem;
+    height: 30rem;
+    /* border: .1rem solid #aaa; */
+    /* border-radius: 25px; */
+    /* background-color: black; */
+    font-family: 'Indie Flower', cursive;
+    font-size: 3rem;
+    box-shadow: 0 0 16px 2px #bbb;
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+    pointer-events: none;
+}
+
+td {
+    /* border: .5rem solid #aaa; */
+    /* border-radius: 25px; */
+    background: transparent;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3rem;
+    /* when set other than min-width, it's width changes when you click 'x' or 'o' */
+    min-width: 10rem;
+    height: 10rem;
+    border-bottom: 1px dashed black;
+    border-right: 1px dashed black;
+}
+
+/* it still selects it though */
+::selection {
+    color: none;
+    background: none;
+}
+/* For Mozilla Firefox */
+::-moz-selection {
+    color: none;
+    background: none;
+}
+
+/* user-select css property */
+td {
+    user-select: none; /* Non-prefixed version, currently
+        supported by Chrome, Edge, Opera and Firefox */
+}
+
+@keyframes jump {
+    0%, 100% {
+        /* top: 14%; */
+        transform: none;
+    }
+    50% {
+        /* top: 15%; */
+        transform: translateY(16px);
+    }
+}
